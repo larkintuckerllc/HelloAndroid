@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ListItem">
+    <RelativeLayout
+        android:id="@+id/content"
+        style="@style/ListContent">
+        <TextView
+            android:id="@+id/name"
+            style="@style/ListSingleLine" />
+    </RelativeLayout>
+    <View
+        style="@style/ListDivider"
+        android:layout_below="@id/content" />
+</RelativeLayout>
