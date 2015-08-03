@@ -94,4 +94,8 @@ public class MainFragment extends Fragment {
         void onThingSelected(String id);
     }
 
+    public String getFirstThing() {
+        return things.get(0);
+    }
+
 }

@@ -4,17 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnThingSelectedListener {
 
@@ -24,6 +16,13 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTh
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        MainFragment mainFragment = (MainFragment)
+                getSupportFragmentManager().findFragmentById(R.id.main_fragment);
+        ThingFragment thingFragment = (ThingFragment)
+                getSupportFragmentManager().findFragmentById(R.id.thing_fragment);
+        if (thingFragment != null) {
+            thingFragment.selectThing(mainFragment.getFirstThing());
+        }
     }
 
     @Override
@@ -45,9 +44,15 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTh
     }
 
     public void onThingSelected(String id) {
-        Intent intent = new Intent(this,ThingActivity.class);
-        intent.putExtra("id", id);
-        startActivity(intent);
+        ThingFragment thingFragment = (ThingFragment)
+                getSupportFragmentManager().findFragmentById(R.id.thing_fragment);
+        if (thingFragment != null) {
+            thingFragment.selectThing(id);
+        } else {
+            Intent intent = new Intent(this, ThingActivity.class);
+            intent.putExtra("id", id);
+            startActivity(intent);
+        }
     }
 
 }
