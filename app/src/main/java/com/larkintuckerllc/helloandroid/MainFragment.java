@@ -18,6 +18,7 @@ import java.util.List;
 public class MainFragment extends Fragment {
 
     private List<String> things = new ArrayList<>(); // Stop warnings with implicit <String>
+    private OnThingSelectedListener mCallback;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,17 @@ public class MainFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mCallback = (OnThingSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnThingSelectedListener");
+        }
+    }
+
     public class ThingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         String id;
@@ -50,6 +62,7 @@ public class MainFragment extends Fragment {
         }
 
         public void onClick(View view) {
+            mCallback.onThingSelected((String)name.getText());
         }
     }
 
@@ -76,4 +89,9 @@ public class MainFragment extends Fragment {
         }
 
     }
+
+    public interface OnThingSelectedListener {
+        void onThingSelected(String id);
+    }
+
 }
