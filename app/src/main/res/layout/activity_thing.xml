@@ -7,9 +7,14 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/Toolbar" />
-    <TextView
-        android:id="@+id/name"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_below="@id/toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <fragment android:name="com.larkintuckerllc.helloandroid.ThingFragment"
+            android:id="@+id/thing_fragment"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </RelativeLayout>

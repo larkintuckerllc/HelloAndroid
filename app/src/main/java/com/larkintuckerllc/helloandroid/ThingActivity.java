@@ -20,7 +20,9 @@ public class ThingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         String id = getIntent().getStringExtra("id");
-        ((TextView) findViewById(R.id.name)).setText(id);
+        ThingFragment thingFragment = (ThingFragment)
+                getSupportFragmentManager().findFragmentById(R.id.thing_fragment);
+        thingFragment.selectThing(id);
     }
 
 }
