@@ -1,5 +1,6 @@
 package com.larkintuckerllc.helloandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public class ThingViewHolder extends RecyclerView.ViewHolder {
+    public class ThingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         String id;
         TextView name;
@@ -62,8 +62,14 @@ public class MainActivity extends AppCompatActivity {
         ThingViewHolder(View view) {
             super(view);
             name = (TextView)view.findViewById(R.id.name);
+            view.setOnClickListener(this);
         }
 
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this,ThingActivity.class);
+            intent.putExtra("id",  name.getText());
+            startActivity(intent);
+        }
     }
 
     public class ThingAdapter extends RecyclerView.Adapter<ThingViewHolder> {
