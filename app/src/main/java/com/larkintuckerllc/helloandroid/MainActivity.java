@@ -18,22 +18,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<String> things;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        things = new ArrayList<String>();
-        things.add("one");
-        things.add("two");
-        things.add("three");
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        RecyclerView thingRV = (RecyclerView) findViewById(R.id.things);
-        thingRV.setHasFixedSize(true);
-        thingRV.setLayoutManager(new LinearLayoutManager(this));
-        thingRV.setAdapter(new ThingAdapter(things));
     }
 
     @Override
@@ -54,46 +44,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public class ThingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        String id;
-        TextView name;
-
-        ThingViewHolder(View view) {
-            super(view);
-            name = (TextView)view.findViewById(R.id.name);
-            view.setOnClickListener(this);
-        }
-
-        public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this,ThingActivity.class);
-            intent.putExtra("id",  name.getText());
-            startActivity(intent);
-        }
-    }
-
-    public class ThingAdapter extends RecyclerView.Adapter<ThingViewHolder> {
-
-        List<String> things;
-
-        ThingAdapter(List<String> things) {
-            this.things = things;
-        }
-
-        public ThingViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.thing, viewGroup, false);
-            return new ThingViewHolder(view);
-        }
-
-        public int getItemCount() {
-            return things.size();
-        }
-
-        public void onBindViewHolder(ThingViewHolder viewHolder, int i) {
-            viewHolder.id = things.get(i);
-            viewHolder.name.setText(things.get(i));
-        }
-
-    }
 
 }
