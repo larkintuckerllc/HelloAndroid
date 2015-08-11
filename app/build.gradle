@@ -2,13 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.larkintuckerllc.helloandroid"
         minSdkVersion 7
         targetSdkVersion 22
-        versionCode 1
         versionName "1.0"
     }
     buildTypes {
@@ -17,8 +16,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
+    productFlavors {
+       telephony {
+           versionCode 22141001
+       }
+       notelephony {
+           versionCode 22140001
+       }
 
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
