@@ -11,6 +11,11 @@ import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.crashlytics.android.Crashlytics;
+
+import org.joda.time.DateTime;
+
+import java.util.Date;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnThingSelectedListener {
@@ -29,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTh
         if (thingFragment != null) {
             thingFragment.selectThing(mainFragment.getFirstThing());
         }
+
+        // DEMO CODE USING JODA-TIME PACKAGE FROM JCENTER
+        Date juDate = new Date();
+        DateTime dt = new DateTime(juDate);
     }
 
     @Override
