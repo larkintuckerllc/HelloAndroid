@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 
 android {
     compileSdkVersion 22
@@ -6,7 +21,7 @@ android {
 
     defaultConfig {
         applicationId "com.larkintuckerllc.helloandroid"
-        minSdkVersion 7
+        minSdkVersion 8
         targetSdkVersion 22
         versionName "1.1.0"
     }
@@ -37,4 +52,7 @@ dependencies {
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.android.support:support-v4:22.2.1'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.1@aar') {
+        transitive = true;
+    }
 }

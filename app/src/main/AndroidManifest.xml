@@ -22,5 +22,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.larkintuckerllc.helloandroid.MainActivity" />
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="fa9ee565e4f1d0ef1e2b753d8e1375721742ad64" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
