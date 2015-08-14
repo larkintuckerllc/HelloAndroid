@@ -8,7 +8,7 @@ android {
         applicationId "com.larkintuckerllc.helloandroid"
         minSdkVersion 7
         targetSdkVersion 22
-        versionName "1.0"
+        versionName "1.1.0"
     }
     buildTypes {
         release {
@@ -18,12 +18,17 @@ android {
     }
     productFlavors {
        telephony {
-           versionCode 22141001
+           versionCode 122131002
+       }
+       telephonytablet {
+            versionCode 122441002
        }
        notelephony {
-           versionCode 22140001
+           versionCode 122130002
        }
-
+       notelephonytablet {
+            versionCode 122440002
+       }
     }
 }
 dependencies {

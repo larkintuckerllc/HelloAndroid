@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.larkintuckerllc.helloandroid" >
-    <uses-feature android:name="android.hardware.screen.portrait" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
     <uses-feature android:name="android.hardware.telephony" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <supports-screens
-        android:smallScreens="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="false"
+        android:smallScreens="false"
+        android:normalScreens="false"
+        android:largeScreens="false"
+        android:xlargeScreens="true"
         />
     <application>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="landscape">
         </activity>
+        <!-- UNREACHABLE DUE TO LAYOUT
         <activity
             android:name=".ThingActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="landscape">
         </activity>
+        -->
     </application>
 </manifest>

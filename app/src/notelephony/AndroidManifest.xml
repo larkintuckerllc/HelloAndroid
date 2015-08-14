@@ -2,14 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.larkintuckerllc.helloandroid" >
     <uses-feature android:name="android.hardware.screen.portrait" />
-    <uses-feature android:name="android.hardware.telephony" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
         android:largeScreens="true"
         android:xlargeScreens="false"
-        />
+    />
     <application>
         <activity
             android:name=".MainActivity"

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.larkintuckerllc.helloandroid" >
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <supports-screens
+        android:smallScreens="false"
+        android:normalScreens="false"
+        android:largeScreens="false"
+        android:xlargeScreens="true"
+    />
+    <application>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <!-- UNREACHABLE DUE TO LAYOUT
+        <activity
+            android:name=".ThingActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        -->
+    </application>
+</manifest>
+
+
+
