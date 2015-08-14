@@ -11,6 +11,7 @@ import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.crashlytics.android.Crashlytics;
+import com.larkintuckerllc.mylibrary.MyTest;
 
 import org.joda.time.DateTime;
 
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTh
         // DEMO CODE USING JODA-TIME PACKAGE FROM JCENTER
         Date juDate = new Date();
         DateTime dt = new DateTime(juDate);
+
+        // DEMO CODE USING LIBRARY
+        String test = MyTest.echo("wow");
     }
 
     @Override
