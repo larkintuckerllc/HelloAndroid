@@ -15,6 +15,8 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
+
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -23,11 +25,11 @@ repositories {
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '22.0.1'
 
     defaultConfig {
         applicationId "com.larkintuckerllc.helloandroid"
-        minSdkVersion 8
+        minSdkVersion 15
         targetSdkVersion 22
         versionName "1.1.2"
     }
@@ -52,7 +54,6 @@ android {
        }
        tabletonly {
            applicationId "com.larkintuckerllc.hellotablet"
-           minSdkVersion 15
            versionCode 4
            versionName "1.0.3"
        }
@@ -69,4 +70,5 @@ dependencies {
     }
     compile 'joda-time:joda-time:2.8.2'
     compile project(':mylibrary')
+    compile "com.google.android.gms:play-services:7.5.+"
 }
