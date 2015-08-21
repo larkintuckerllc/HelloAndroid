@@ -3,6 +3,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_call">Call</string>
     <string name="action_hello">Hello</string>
+    <string name="action_foo">Foo</string>
+    <string name="action_baz">Baz</string>
     <string name="snackbar_text">Hello</string>
     <string name="title_activity_thing">ThingActivity</string>
     <string name="action_settings">Settings</string>

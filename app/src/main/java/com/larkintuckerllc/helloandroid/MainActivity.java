@@ -106,6 +106,14 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTh
                          .show();
                  return true;
 
+             case R.id.action_foo:
+                 MyIntentService.startActionFoo(this, "yes", "wow");
+                 return true;
+
+             case R.id.action_baz:
+                 MyIntentService.startActionBaz(this, "no", "silly");
+                 return true;
+
              // IN notelephony FLAVOR CODE IS UNREACHABLE NO NEED TO CHECK FOR TELEPHONY
              case R.id.action_call:
                  Intent phoneCallIntent = new Intent(Intent.ACTION_CALL);
