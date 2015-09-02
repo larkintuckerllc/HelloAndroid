@@ -1,9 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.larkintuckerllc.helloandroid.ThingFragment">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.larkintuckerllc.helloandroid.ThingFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="test" />
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text"
+        android:layout_above="@id/name" >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/right"
+            android:scaleType="centerCrop"
+            android:background="@color/ripple_material_dark" />
+    </FrameLayout>
+</RelativeLayout>
+

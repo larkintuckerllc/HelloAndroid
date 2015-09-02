@@ -52,7 +52,7 @@
         </activity>
         <activity
             android:name=".ThingActivity"
-            android:label="@string/title_activity_thing" >
+            android:label="@string/title_activity_thing"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -67,6 +67,23 @@
             android:name=".MyIntentService"
             android:exported="false" >
         </service>
+
+        <activity
+            android:name=".GridActivity"
+            android:label="@string/title_activity_grid"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.larkintuckerllc.helloandroid.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ListActivity"
+            android:label="@string/title_activity_list"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.larkintuckerllc.helloandroid.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

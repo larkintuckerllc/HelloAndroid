@@ -121,6 +121,18 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTh
                  startActivity(phoneCallIntent);
                  return true;
 
+             // IN MOST FLAVORS CODE IS UNREACHABLE
+             case R.id.action_list:
+                 Intent listIntent = new Intent(this, ListActivity.class);
+                 startActivity(listIntent);
+                 return true;
+
+             // IN MOST FLAVORS CODE IS UNREACHABLE
+             case R.id.action_grid:
+                 Intent gridIntent = new Intent(this, GridActivity.class);
+                 startActivity(gridIntent);
+                 return true;
+
              default:
                  return super.onOptionsItemSelected(item);
          }

@@ -1,0 +1,21 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.larkintuckerllc.helloandroid.GridActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar" />
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/grid_view"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="250dp"
+        android:numColumns="3"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
+        android:stretchMode="none"
+        android:background="@color/accent_material_dark"/>
+</RelativeLayout>
